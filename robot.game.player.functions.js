@@ -1,7 +1,9 @@
 //robot.game.player.functions.js
 
 function drawPlayer(gameState) {
-  if (gameState.player.isDead) return;
+
+  const colorVal = Math.floor(255 * (1 - gameState.player.damageLevel));
+  const greyColor = `rgb(${colorVal}, ${colorVal}, ${colorVal})`;
 
   // Combine both states: Physical Bump OR Projectile Hit
   const shouldFlash = gameState.player.isColliding || gameState.player.isHit;
@@ -19,7 +21,7 @@ function drawPlayer(gameState) {
   gameState.ui.ctx.beginPath();
   gameState.ui.ctx.arc(gameState.player.x, gameState.player.y, gameState.player.radius, 0, Math.PI * 2);
   // Use shouldFlash instead of just isColliding
-  gameState.ui.ctx.fillStyle = (shouldFlash && gameState.player.flashState) ? "red" : "#ddd";
+  gameState.ui.ctx.fillStyle = (shouldFlash && gameState.player.flashState) ? "red" : greyColor;
   gameState.ui.ctx.fill();
   gameState.ui.ctx.strokeStyle = "black";
   gameState.ui.ctx.stroke();

@@ -84,7 +84,7 @@ function updateRobots(gameState) {
       p.x += Math.cos(p.angle) * p.speed;
       p.y += Math.sin(p.angle) * p.speed;
 
-      return !projectileHits(p);
+      return !projectileHits(p, rb);
     });
   });
 }

@@ -122,4 +122,60 @@ button:disabled {
   background: #ccc; /* Or whatever looks "grayed out" to you */
 }
 
+/* Styling for the clickable heading */
+.section-title {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
 
+/* The Triangle/Arrow */
+.section-title::after {
+  content: '▼'; /* Down triangle when open */
+  font-size: 10px;
+  transition: transform 0.2s;
+}
+
+/* Rotation for when it is collapsed */
+.section-title.collapsed::after {
+  content: '▶'; /* Right triangle when closed */
+}
+
+/* The container that actually hides */
+.collapsible-content {
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  max-height: 500px; /* Large enough for content */
+}
+
+.collapsible-content.hidden {
+  max-height: 0;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  text-align: center;
+  max-width: 300px;
+}
+
+/* Cursor cues for the canvas edges */
+.resizing-h { cursor: ew-resize !important; }
+.resizing-v { cursor: ns-resize !important; }
+.resizing-both { cursor: nwse-resize !important; }
