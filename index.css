@@ -1,0 +1,210 @@
+:root {
+    --bg-main: #f4f7fb;
+    --sidebar-blue: #eaf2ff;
+    --border-blue: #cdd8ee;
+    --accent-blue: #4a7cff;
+    --text-dark: #333;
+    --text-mid: #555;
+    --card-bg: #ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* HERO */
+.hero {
+    background: var(--sidebar-blue);
+    border: 1px solid var(--border-blue);
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: var(--accent-blue);
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: var(--text-mid);
+}
+
+/* CARDS */
+.card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid var(--border-blue);
+    margin-bottom: 20px;
+}
+
+/* FEATURE GRID */
+.grid-feature {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.feature-box {
+    background: var(--sidebar-blue);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid var(--accent-blue);
+}
+
+/* VIDEO GRID */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.video-card {
+    text-decoration: none;
+    color: inherit;
+    background: var(--card-bg);
+    border: 1px solid var(--border-blue);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.thumb-placeholder {
+    position: relative;
+    background: #000;
+    aspect-ratio: 16 / 9;
+}
+
+.thumb-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+}
+
+.part-label {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: var(--accent-blue);
+    color: white;
+    padding: 2px 8px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.card-info {
+    padding: 15px;
+}
+
+.card-info h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+/* BUTTONS */
+.cta-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid var(--accent-blue);
+    color: var(--accent-blue);
+}
+
+.btn.primary {
+    background: var(--accent-blue);
+    color: white;
+}
+
+.footer-card {
+    text-align: center;
+    padding: 40px 0;
+    border-top: 1px solid var(--border-blue);
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: #999;
+}
+
+/* METHOD SECTION */
+.method-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.method-item {
+    background: #ffffff;
+    padding: 20px;
+    border: 1px solid var(--border-blue);
+    border-radius: 8px;
+}
+
+.method-item h3 {
+    color: var(--accent-blue);
+    margin-top: 0;
+    font-size: 1.1rem;
+}
+
+.intro strong {
+    color: var(--accent-blue);
+    font-size: 1.1em;
+}
+
+/* SPECIAL PLAY BUTTON */
+.play-btn {
+    background: #28a745; /* A success-green to contrast the blues */
+    color: white !important;
+    border-color: #218838 !important;
+    padding: 12px 25px !important;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+    transition: all 0.3s ease;
+}
+
+.play-btn:hover {
+    background: #218838;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+}
+
+/* Ensure the cta-group handles the extra button well on mobile */
+.cta-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap; /* Wraps buttons on smaller screens */
+    margin: 25px 0;
+}
